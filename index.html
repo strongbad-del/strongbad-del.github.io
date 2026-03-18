@@ -229,6 +229,71 @@
       color: var(--footer-color);
       transition: color 0.3s ease;
     }
+
+    /* ── Entrance animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* Wrapper + toggle slide down */
+    .card-wrapper {
+      animation: fadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .toggle {
+      animation: fadeDown 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+    }
+
+    /* Inner card elements stagger up */
+    .logo-wrap  { animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
+    .name       { animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
+    .title      { animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.42s both; }
+    .divider    { animation: fadeIn 0.4s ease 0.50s both; }
+    .bio        { animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.55s both; }
+
+    /* Buttons stagger one by one */
+    .links .btn:nth-child(1) { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both; }
+    .links .btn:nth-child(2) { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.75s both; }
+    .links .btn:nth-child(3) { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.85s both; }
+
+    .footer { animation: fadeIn 0.4s ease 0.95s both; }
+
+    /* ── Enhanced hover effects ── */
+    .btn {
+      will-change: transform, box-shadow;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 10px 28px rgba(0, 255, 90, 0.35);
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-3px) scale(1.01);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      border-color: rgba(0, 255, 90, 0.4);
+    }
+
+    body.light .btn-outline:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+      border-color: rgba(0, 160, 80, 0.35);
+    }
+
+    .btn:active {
+      transform: translateY(-1px) scale(0.99);
+      transition-duration: 0.08s;
+    }
   </style>
 </head>
 <body>
